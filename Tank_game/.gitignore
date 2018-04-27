@@ -24,6 +24,7 @@ target/
 # eclipse project file
 .settings/
 .classpath
+.metadata
 .project
 
 # NetBeans specific
@@ -38,3 +39,4 @@ nb-configuration.xml
 
 # OS
 .DS_Store
+/bin/
