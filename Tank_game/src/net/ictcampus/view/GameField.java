@@ -22,7 +22,7 @@ public class GameField extends JFrame{
         } catch (IOException e) {
             e.printStackTrace();
         }
-        field.pack();
+        //field.pack();
 		field.setResizable(false);
 		field.setVisible(true);
 		field.setLayout(null);		 
