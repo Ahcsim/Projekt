@@ -17,7 +17,7 @@ public class PowerUp extends Element{
 		super(posX, posY, width, height, pic);
 	}
 	
-	//
+	//Die Position wird zufällig bestummen
 	public void zufallPosition() {
 		ugZufallPos = Math.random()*4;
 		ugZufallPos =(Math.round(ugZufallPos));
@@ -44,6 +44,7 @@ public class PowerUp extends Element{
 		}
 	}
 	
+	//Es wird ein zufälliges PowerUp gewählt
 	public int zufallPowerUp() {
 		ugZufallPow = Math.random()*4;
 		ugZufallPow =(Math.ceil(ugZufallPow));
@@ -51,6 +52,7 @@ public class PowerUp extends Element{
 		return zufallPow;
 	}
 	
+	//Getter und Setter
 	public int getxPos() {
 		return xPos;
 	}
