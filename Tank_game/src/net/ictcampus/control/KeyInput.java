@@ -25,34 +25,66 @@ public class KeyInput implements KeyListener{
     public void keyPressed(KeyEvent e) {
     	if (e.getKeyCode() == KeyEvent.VK_UP) {
     		tank2.changeImg(1);
+    		tank2.setHeight(60);
+    		tank2.setWidth(32);
+    		int y = tank2.getY();
+    		tank2.setY(y-8);
     		frame.repaint();
     	}
     	if (e.getKeyCode() == KeyEvent.VK_DOWN) {
     		tank2.changeImg(3);
+    		int y = tank2.getY();
+    		tank2.setHeight(60);
+    		tank2.setWidth(32);
+    		tank2.setY(y+8);
     		frame.repaint();
     	}
     	if (e.getKeyCode() == KeyEvent.VK_RIGHT) {
     		tank2.changeImg(2);
+    		int x = tank2.getX();
+    		tank2.setHeight(32);
+    		tank2.setWidth(60);
+    		tank2.setX(x+8);
     		frame.repaint();
     	}
     	if (e.getKeyCode() == KeyEvent.VK_LEFT) {
     		tank2.changeImg(4);
+    		int x = tank2.getX();
+    		tank2.setHeight(32);
+    		tank2.setWidth(60);
+    		tank2.setX(x-8);
     		frame.repaint();
     	}
     	if (e.getKeyCode() == KeyEvent.VK_W) {
-    		tank2.changeImg(1);
+    		tank1.changeImg(5);
+    		int y = tank1.getY();
+    		tank1.setHeight(60);
+    		tank1.setWidth(32);
+    		tank1.setY(y-8);
     		frame.repaint();
     	}
     	if (e.getKeyCode() == KeyEvent.VK_S) {
-    		tank2.changeImg(3);
+    		tank1.changeImg(7);
+    		int y = tank1.getY();
+    		tank1.setHeight(60);
+    		tank1.setWidth(32);
+    		tank1.setY(y+8);
     		frame.repaint();
     	}
     	if (e.getKeyCode() == KeyEvent.VK_D) {
-    		tank2.changeImg(2);
+    		tank1.changeImg(6);
+    		int x = tank1.getX();
+    		tank1.setHeight(32);
+    		tank1.setWidth(60);
+    		tank1.setX(x+8);
     		frame.repaint();
     	}
     	if (e.getKeyCode() == KeyEvent.VK_A) {
-    		tank2.changeImg(4);
+    		tank1.changeImg(8);
+    		int x = tank1.getX();
+    		tank1.setHeight(32);
+    		tank1.setWidth(60);
+    		tank1.setX(x-8);
     		frame.repaint();
     	}
     }

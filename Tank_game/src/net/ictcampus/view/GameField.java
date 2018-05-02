@@ -9,7 +9,7 @@ import javax.swing.JFrame;
 import net.ictcampus.control.KeyInput;
 import net.ictcampus.model.Element;
 
-public class GameField extends JFrame {
+public class GameField extends JFrame{
 
 	ArrayList<Element> elements = new ArrayList<>();
 	Frame panel;
@@ -50,5 +50,6 @@ public class GameField extends JFrame {
 		GameField field = new GameField();
 
 	}
+
 
 }

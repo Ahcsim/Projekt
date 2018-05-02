@@ -69,6 +69,39 @@ public class Tank extends Element {
 			} catch (IOException e) {
 				e.printStackTrace();
 			}break;
+			
+		case 5:
+			try {
+			newTank = ImageIO.read(new File("Images/gelbhoch.png"));
+			setImg(ImageIO.read(new File("Images/gelbhoch.png")));
+			//;
+			} catch (IOException e) {
+				e.printStackTrace();
+			}break;
+			
+		case 6:
+			try {
+			newTank = ImageIO.read(new File("Images/gelbrechts.png"));
+			setImg(ImageIO.read(new File("Images/gelbrechts.png")));
+			} catch (IOException e) {
+				e.printStackTrace();
+			}break;
+			
+		case 7:
+			try {
+			newTank = ImageIO.read(new File("Images/gelbrunter.png"));
+			setImg(ImageIO.read(new File("Images/gelbrunter.png")));
+			} catch (IOException e) {
+				e.printStackTrace();
+			}break;
+			
+		case 8:
+			try {
+			newTank = ImageIO.read(new File("Images/gelblinks.png"));
+			setImg(ImageIO.read(new File("Images/gelblinks.png")));
+			} catch (IOException e) {
+				e.printStackTrace();
+			}break;
 		}
 		
 	}

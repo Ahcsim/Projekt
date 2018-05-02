@@ -24,7 +24,6 @@ public class Frame extends JPanel{
 	public void paintComponent(Graphics g) {
 		super.paintComponent(g);
 		g.drawLine(0, 0,200,300);
-		System.out.println("test");
 		BufferedImage back = null;
 		try {
 			back = ImageIO.read(new File("C:/Users/voektm/Desktop/Projekt/Projekt/Images/Map1.png"));
