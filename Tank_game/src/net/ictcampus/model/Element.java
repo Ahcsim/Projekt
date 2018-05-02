@@ -1,5 +1,7 @@
 package net.ictcampus.model;
 
+import java.awt.image.BufferedImage;
+
 import com.sun.javafx.geom.Rectangle;
 import com.sun.prism.Image;
 
@@ -9,7 +11,7 @@ public class Element {
 	private int width;
 	private int height;
 	private String pic;
-	private java.awt.Image img;
+	private BufferedImage img;
 	
 	public  Element(int x, int y, int width, int height, String pic) {
 		this.setX(x);
@@ -59,11 +61,11 @@ public class Element {
 		this.pic = pic;
 	}
 
-	public java.awt.Image getImg() {
+	public BufferedImage getImg() {
 		return img;
 	}
 
-	public void setImg(java.awt.Image image) {
+	public void setImg(BufferedImage image) {
 		this.img = image;
 	}
 	
