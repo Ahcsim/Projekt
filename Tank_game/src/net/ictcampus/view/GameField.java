@@ -18,11 +18,10 @@ public class GameField extends JFrame{
 		GameField field=new GameField();
 		field.setSize(700,700);
 		try {
-            field.setContentPane(new JLabel(new ImageIcon(ImageIO.read(new File("Map1.png")))));
+            field.setContentPane(new JLabel(new ImageIcon(ImageIO.read(new File("C:/Users/voektm/Desktop/Projekt/Tank_game/src/net/ictcampus/view/Map1.png")))));
         } catch (IOException e) {
             e.printStackTrace();
         }
-        //field.pack();
 		field.setResizable(false);
 		field.setVisible(true);
 		field.setLayout(null);		 
