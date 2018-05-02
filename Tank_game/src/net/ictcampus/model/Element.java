@@ -1,62 +1,73 @@
 package net.ictcampus.model;
 
-import java.awt.geom.Rectangle2D;
+import com.sun.javafx.geom.Rectangle;
+import com.sun.prism.Image;
 
-public class Element extends Rectangle2D{
+public class Element {
+	private int x;
+	private int y;
+	private int width;
+	private int height;
+	private String pic;
+	private java.awt.Image img;
+	
+	public  Element(int x, int y, int width, int height, String pic) {
+		this.setX(x);
+		this.setY(y);
+		this.setWidth(width);
+		this.setHeight(height);
+		this.setPic(pic);
+	}
+
+	public int getX() {
+		return x;
+	}
+
+	public void setX(int x) {
+		this.x = x;
+	}
+
+	public int getY() {
+		return y;
+	}
+
+	public void setY(int y) {
+		this.y = y;
+	}
+
+	public int getWidth() {
+		return width;
+	}
+
+	public void setWidth(int width) {
+		this.width = width;
+	}
+
+	public int getHeight() {
+		return height;
+	}
+
+	public void setHeight(int height) {
+		this.height = height;
+	}
+
+	public String getPic() {
+		return pic;
+	}
+
+	public void setPic(String pic) {
+		this.pic = pic;
+	}
+
+	public java.awt.Image getImg() {
+		return img;
+	}
+
+	public void setImg(java.awt.Image image) {
+		this.img = image;
+	}
+	
 	
 
-	@Override
-	public Rectangle2D createIntersection(Rectangle2D r) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public Rectangle2D createUnion(Rectangle2D r) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public int outcode(double x, double y) {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-
-	@Override
-	public void setRect(double x, double y, double w, double h) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public double getHeight() {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-
-	@Override
-	public double getWidth() {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-
-	@Override
-	public double getX() {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-
-	@Override
-	public double getY() {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-
-	@Override
-	public boolean isEmpty() {
-		// TODO Auto-generated method stub
-		return false;
-	}
 
 }

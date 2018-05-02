@@ -18,7 +18,7 @@ public class GameField extends JFrame{
 		GameField field=new GameField();
 		field.setSize(700,700);
 		try {
-            field.setContentPane(new JLabel(new ImageIcon(ImageIO.read(new File("C:/Users/voektm/Desktop/Projekt/Tank_game/src/net/ictcampus/view/Map1.png")))));
+            field.setContentPane(new JLabel(new ImageIcon(ImageIO.read(new File("C:/Users/voektm/Desktop/Projekt/Projekt/Images/Map1.png")))));
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -26,6 +26,8 @@ public class GameField extends JFrame{
 		field.setVisible(true);
 		field.setLayout(null);		 
 		field.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		Tank tank1 =new Tank(50,50,40,40,"C:/Users/voektm/Desktop/Projekt/Projekt/Images/panzerrot.png");
+		System.out.println(tank1.getBounds());
 	}
 	public void paintComponent(Graphics g) {
 		
