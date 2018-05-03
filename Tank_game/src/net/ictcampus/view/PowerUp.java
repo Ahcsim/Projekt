@@ -62,7 +62,7 @@ public class PowerUp extends Element{
 			lives = tank.getLives()+1;
 			tank.setLives(lives);
 		}
-		
+			
 	}
 	
 	//Getter und Setter

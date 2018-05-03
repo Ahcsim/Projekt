@@ -1,4 +1,5 @@
 package net.ictcampus.control;
 
-public class Game {
+public class Game { 
+	
 }

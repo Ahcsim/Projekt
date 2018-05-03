@@ -35,6 +35,7 @@ public class Frame extends JPanel{
 				g.drawImage(e.getImg(),e.getX(),e.getY(),e.getWidth(),e.getHeight(),null);
 			}
 		}
+
 	
 	
 }
