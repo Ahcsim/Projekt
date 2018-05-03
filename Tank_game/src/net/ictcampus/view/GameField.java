@@ -21,6 +21,7 @@ public class GameField extends JFrame{
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		Tank tank1 = new Tank(20, 50, 32, 60, "Images/gelbrunter.png");
 		Tank tank2 = new Tank(630, 630, 32, 60, "Images/rothoch.png");
+		PowerUp pu = new PowerUp(0, 0, 30,30,"C:\\Users\\spilkat\\Documents\\Module\\Applikationsentwicklung\\Projekt\\Projekt\\Images");
 		Barrier barrier1 = new Barrier(122, 90, 139, 42, "Images/barrier.png");
 		Barrier barrier2 = new Barrier(423, 97, 133, 32, "Images/barrier.png");
 		Barrier barrier3 = new Barrier(515, 128, 41, 137, "Images/barrierhoch.png");
@@ -37,9 +38,9 @@ public class GameField extends JFrame{
 		elements.add(barrier7);
 		elements.add(tank1);
 		elements.add(tank2);
+		elements.add(pu);
 		panel = new Frame(elements);
 		add(panel);
-
 		KeyInput ki = new KeyInput(tank1,tank2, this);
 		addKeyListener(ki);
 		System.out.println(tank1.getBounds());

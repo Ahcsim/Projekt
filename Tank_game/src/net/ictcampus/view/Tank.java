@@ -15,7 +15,12 @@ import com.sun.prism.Image;
 import net.ictcampus.model.Element;
 
 public class Tank extends Element {
-
+	
+	private int speed;
+	private int lives;
+	private int reloadTime;
+	private int shootSpeed;
+	
 	BufferedImage newTank;
 
 	public Tank(int x, int y, int width, int height, String pic) {
@@ -105,5 +110,39 @@ public class Tank extends Element {
 		}
 		
 	}
+
+	public int getSpeed() {
+		return speed;
+	}
+
+	public void setSpeed(int speed) {
+		this.speed = speed;
+	}
+
+	public int getLives() {
+		return lives;
+	}
+
+	public void setLives(int lives) {
+		this.lives = lives;
+	}
+
+	public int getReloadTime() {
+		return reloadTime;
+	}
+
+	public void setReloadTime(int reloadTime) {
+		this.reloadTime = reloadTime;
+	}
+
+	public int getShootSpeed() {
+		return shootSpeed;
+	}
+
+	public void setShootSpeed(int shootSpeed) {
+		this.shootSpeed = shootSpeed;
+	}
+	
+	
 
 }
