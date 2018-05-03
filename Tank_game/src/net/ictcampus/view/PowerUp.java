@@ -5,6 +5,8 @@ import net.ictcampus.model.Element;
 public class PowerUp extends Element{
 	
 	//Definition
+	private int lives;
+	private int PowerUp;
 	private int xPos;
 	private int yPos;
 	private int zufallPos;
@@ -19,6 +21,7 @@ public class PowerUp extends Element{
 	
 	//Die Position wird zufällig bestummen
 	public void zufallPosition() {
+		PowerUp = zufallPowerUp();
 		ugZufallPos = Math.random()*4;
 		ugZufallPos =(Math.round(ugZufallPos));
 		zufallPos = (int)(ugZufallPos);
@@ -52,6 +55,19 @@ public class PowerUp extends Element{
 		return zufallPow;
 	}
 	
+	public void powerUps(Tank tank){
+		
+		switch(zufallPow) {
+		case 1:
+			lives = tank.getLives()+1;
+			tank.setLives(lives);
+	
+		case 2:
+			
+			//tank.setSpeed(speed);
+		}
+	}
+	
 	//Getter und Setter
 	public int getxPos() {
 		return xPos;
@@ -67,6 +83,10 @@ public class PowerUp extends Element{
 
 	public void setyPos(int yPos) {
 		this.yPos = yPos;
+	}
+
+	public int getPowerUp() {
+		return PowerUp;
 	}
 	
 }

@@ -16,10 +16,13 @@ import net.ictcampus.model.Element;
 
 public class Tank extends Element {
 
+
 	//BufferedImage newTank;
 	private String richtung;
-
-
+	private int speed;
+	private int lives;
+	private int reloadTime;
+	private int shootSpeed;
 
 	public Tank(int x, int y, int width, int height, String pic) {
 		super(x, y, width, height, pic);
@@ -127,5 +130,39 @@ public class Tank extends Element {
 	public void setRichtung(String richtung) {
 		this.richtung = richtung;
 	}
+
+	public int getSpeed() {
+		return speed;
+	}
+
+	public void setSpeed(int speed) {
+		this.speed = speed;
+	}
+
+	public int getLives() {
+		return lives;
+	}
+
+	public void setLives(int lives) {
+		this.lives = lives;
+	}
+
+	public int getReloadTime() {
+		return reloadTime;
+	}
+
+	public void setReloadTime(int reloadTime) {
+		this.reloadTime = reloadTime;
+	}
+
+	public int getShootSpeed() {
+		return shootSpeed;
+	}
+
+	public void setShootSpeed(int shootSpeed) {
+		this.shootSpeed = shootSpeed;
+	}
+	
+	
 
 }
