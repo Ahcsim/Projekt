@@ -3,6 +3,7 @@ package net.ictcampus.view;
 import java.awt.Graphics;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.List;
 
 import javax.swing.JFrame;
 
@@ -41,7 +42,7 @@ public class GameField extends JFrame{
 		elements.add(tank1);
 		elements.add(tank2);
 		elements.add(pu);
-		panel = new Frame(elements);
+		panel = new Frame(elements, tank1,tank2);
 		add(panel);
 
 		KeyInput ki = new KeyInput(tank1,tank2, this,this);
@@ -56,6 +57,7 @@ public class GameField extends JFrame{
 	public void addElement(Element a) {
 		elements.add(a);
 	}
+
 
 	public static void main(String[] args){
 		GameField field = new GameField();

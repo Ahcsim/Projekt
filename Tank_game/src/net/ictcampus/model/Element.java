@@ -1,8 +1,8 @@
 package net.ictcampus.model;
 
+import java.awt.Rectangle;
 import java.awt.image.BufferedImage;
 
-import com.sun.javafx.geom.Rectangle;
 import com.sun.prism.Image;
 
 public class Element {
@@ -19,6 +19,25 @@ public class Element {
 		this.setWidth(width);
 		this.setHeight(height);
 		this.setPic(pic);
+	}
+	
+//	public boolean collision(Element a, Element b) {
+//		Rectangle r = a.getBounds();
+//		if (r.intersects(b.getBounds())){
+//			return true;
+//		}
+//		return false;
+//	}
+	public boolean collision(Element a) {
+		Rectangle r = this.getBounds();
+		if(r.intersects(a.getBounds())) {
+			return true;
+		}
+		return false;
+	}
+	public Rectangle getBounds() {
+		return new Rectangle(getX(), getY(), getWidth(), getHeight());
+
 	}
 
 	public int getX() {
