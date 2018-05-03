@@ -80,7 +80,7 @@ public class Frame extends JPanel {
 		g.drawLine(0, 0, 200, 300);
 		BufferedImage back = null;
 		try {
-			back = ImageIO.read(new File("C:/Users/voektm/Desktop/Projekt/Projekt/Images/Map1.png"));
+			back = ImageIO.read(new File("Images/Map1.png"));
 		} catch (IOException e1) {
 			e1.printStackTrace();
 		}
