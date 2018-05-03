@@ -62,9 +62,6 @@ public class PowerUp extends Element{
 			lives = tank.getLives()+1;
 			tank.setLives(lives);
 		}
-		case 2:
-			
-			tank.setSpeed(speed);
 		
 	}
 	

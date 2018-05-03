@@ -21,14 +21,14 @@ public class GameField extends JFrame{
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		Tank tank1 = new Tank(20, 50, 32, 60, "Images/gelbrunter.png");
 		Tank tank2 = new Tank(630, 630, 32, 60, "Images/rothoch.png");
-		PowerUp pu = new PowerUp(0, 0, 30,30,"C:\\Users\\spilkat\\Documents\\Module\\Applikationsentwicklung\\Projekt\\Projekt\\Images");
+		PowerUp pu = new PowerUp(0, 0, 30,30,"Images/powerup.png");
 		Barrier barrier1 = new Barrier(122, 90, 139, 42, "Images/barrier.png");
 		Barrier barrier2 = new Barrier(423, 97, 133, 32, "Images/barrier.png");
 		Barrier barrier3 = new Barrier(515, 128, 41, 137, "Images/barrierhoch.png");
 		Barrier barrier4 = new Barrier(38, 403, 113, 42, "Images/barrier.png");
 		Barrier barrier5 = new Barrier(117, 497, 37, 100, "Images/barrierhoch.png");
 		Barrier barrier6 = new Barrier(384, 461, 146, 41, "Images/barrier.png");
-		Barrier barrier7 = new Barrier(592, 565, 36, 74, "Images/barrierhoch.png");
+		Barrier barrier7 = new Barrier(592, 565, 36, 74, "mages/barrierhoch.png");
 		elements.add(barrier1);
 		elements.add(barrier2);
 		elements.add(barrier3);
