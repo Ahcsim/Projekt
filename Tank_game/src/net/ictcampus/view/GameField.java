@@ -20,7 +20,9 @@ public class GameField extends JFrame{
 
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		Tank tank1 = new Tank(20, 50, 32, 60, "Images/gelbrunter.png");
+		tank1.setRichtung("runter");
 		Tank tank2 = new Tank(630, 630, 32, 60, "Images/rothoch.png");
+		tank2.setRichtung("hoch");
 		Barrier barrier1 = new Barrier(122, 90, 139, 42, "Images/barrier.png");
 		Barrier barrier2 = new Barrier(423, 97, 133, 32, "Images/barrier.png");
 		Barrier barrier3 = new Barrier(515, 128, 41, 137, "Images/barrierhoch.png");
@@ -40,13 +42,19 @@ public class GameField extends JFrame{
 		panel = new Frame(elements);
 		add(panel);
 
-		KeyInput ki = new KeyInput(tank1,tank2, this);
+		KeyInput ki = new KeyInput(tank1,tank2, this,this);
 		addKeyListener(ki);
 		System.out.println(tank1.getBounds());
 		setVisible(true);
 	}
+	public boolean collision(ArrayList<Element> el) {
+		return false;
+	}
+	public void addElement(Element a) {
+		elements.add(a);
+	}
 
-	public static void main(String[] args) throws IOException {
+	public static void main(String[] args){
 		GameField field = new GameField();
 
 	}

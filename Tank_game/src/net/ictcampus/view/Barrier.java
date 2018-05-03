@@ -28,4 +28,5 @@ public class Barrier extends Element{
 		return new Rectangle(getX(),getY(),getWidth(),getHeight());
 		
 	}
+	
 }
