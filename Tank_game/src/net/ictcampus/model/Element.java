@@ -21,13 +21,6 @@ public class Element {
 		this.setPic(pic);
 	}
 	
-//	public boolean collision(Element a, Element b) {
-//		Rectangle r = a.getBounds();
-//		if (r.intersects(b.getBounds())){
-//			return true;
-//		}
-//		return false;
-//	}
 	public boolean collision(Element a) {
 		Rectangle r = this.getBounds();
 		if(r.intersects(a.getBounds())) {

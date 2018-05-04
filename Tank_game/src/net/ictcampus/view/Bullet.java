@@ -7,28 +7,38 @@ import javax.swing.JFrame;
 import net.ictcampus.model.Element;
 
 public class Bullet extends Element {
-	private int shotSpeed = 5;
+	private int shotSpeed = 50;
 	private int distance;
 	private String richtung="rechts";
+	private String owner;
 
-	public Bullet(int x, int y, int width, int height, String pic) {
+	public Bullet(String owner,int x, int y, int width, int height, String pic) {
 		super(x, y, width, height, pic);
+		this.owner=owner;
 	}
 
 	public void bulletForward() {
 		setDistance(-getShotSpeed());
+		setY(getY()-5);
+		setX(getX()+12);
 	}
 
 	public void bulletRight() {
 		setDistance(getShotSpeed());
+		setX(getX()+50);
+		setY(getY()+12);
 	}
 
 	public void bulletBackward() {
 		setDistance(getShotSpeed());
+		setY(getY()+45);
+		setX(getX()+10);
 	}
 
 	public void bulletLeft() {
 		setDistance(-getShotSpeed());
+		setX(getX()-5);
+		setY(getY()+11);
 	}
 
 	public void bulletStop() {
@@ -77,5 +87,13 @@ public class Bullet extends Element {
 
 	public void setRichtung(String richtung) {
 		this.richtung = richtung;
+	}
+
+	public String getOwner() {
+		return owner;
+	}
+
+	public void setOwner(String owner) {
+		this.owner = owner;
 	}
 }

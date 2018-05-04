@@ -12,21 +12,24 @@ import com.sun.javafx.geom.Rectangle;
 import com.sun.prism.Graphics;
 import com.sun.prism.Image;
 
+import net.ictcampus.control.ReloadTimeer;
 import net.ictcampus.model.Element;
 
 public class Tank extends Element {
 
 	// BufferedImage newTank;
 	private String richtung;
-	private int speed = 5;
+	private int speed = 1;
 	private int lives = 3;
 	private int reloadTime;
 	private int distance;
 	private String tankFarbe;
+	private String name;
+	private ReloadTimeer Timer;
 
-	public Tank(int x, int y, int width, int height, String pic) {
+	public Tank(String name, int x, int y, int width, int height, String pic) {
 		super(x, y, width, height, pic);
-
+		this.name = name;
 		try {
 			// newTank = ImageIO.read(new File(pic));
 			setImg(ImageIO.read(new File(pic)));
@@ -75,8 +78,10 @@ public class Tank extends Element {
 	
 
 	public Bullet shoot(Tank t) {
-		Bullet schuss = new Bullet(t.getX(), t.getY()-20, 28, 17, "Images/bullet.png");
-		return schuss;
+			Bullet schuss = new Bullet(t.getName(),t.getX(), t.getY(), 8, 8, "Images/punkt.png");
+			return schuss;
+		
+		
 	}
 
 	public void changeImg(int t) {
@@ -206,12 +211,12 @@ public class Tank extends Element {
 		this.distance = distance;
 	}
 
-	public String getTankFarbe() {
-		return tankFarbe;
+	public String getName() {
+		return name;
 	}
-
-	public void setTankFarbe(String tankFarbe) {
-		this.tankFarbe = tankFarbe;
+	
+	public void setName(String name) {
+		this.name = name;
 	}
 
 }

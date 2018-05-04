@@ -1,9 +1,5 @@
 package net.ictcampus.control;
 
-import java.io.File;
-import java.io.IOException;
-
-import javax.imageio.ImageIO;
 import javax.swing.JFrame;
 
 import net.ictcampus.view.GameField;
