@@ -58,11 +58,9 @@ public class GameField extends JFrame{
 		elements.add(a);
 	}
 
-
 	public static void main(String[] args){
 		GameField field = new GameField();
 
 	}
-
 
 }
