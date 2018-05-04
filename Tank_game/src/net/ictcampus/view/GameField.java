@@ -15,7 +15,7 @@ public class GameField extends JFrame{
 	ArrayList<Element> elements = new ArrayList<>();
 	Frame panel;
 
-	public GameField() {
+	public GameField(String farbeTank1, String farbeTank2) {
 		setSize(700, 700);
 		setResizable(false);
 
@@ -31,7 +31,7 @@ public class GameField extends JFrame{
 		Barrier barrier4 = new Barrier(38, 403, 113, 42, "Images/barrier.png");
 		Barrier barrier5 = new Barrier(117, 497, 37, 100, "Images/barrierhoch.png");
 		Barrier barrier6 = new Barrier(384, 461, 146, 41, "Images/barrier.png");
-		Barrier barrier7 = new Barrier(592, 565, 36, 74, "mages/barrierhoch.png");
+		Barrier barrier7 = new Barrier(592, 565, 36, 74, "Images/barrierhoch.png");
 		elements.add(barrier1);
 		elements.add(barrier2);
 		elements.add(barrier3);
@@ -58,9 +58,9 @@ public class GameField extends JFrame{
 		elements.add(a);
 	}
 
-	public static void main(String[] args){
-		GameField field = new GameField();
-
-	}
+//	public static void main(String[] args){
+//		GameField field = new GameField();
+//
+//	}
 
 }

@@ -22,6 +22,7 @@ public class Tank extends Element {
 	private int lives = 3;
 	private int reloadTime;
 	private int distance;
+	private String tankFarbe;
 
 	public Tank(int x, int y, int width, int height, String pic) {
 		super(x, y, width, height, pic);
@@ -203,6 +204,14 @@ public class Tank extends Element {
 
 	public void setDistance(int distance) {
 		this.distance = distance;
+	}
+
+	public String getTankFarbe() {
+		return tankFarbe;
+	}
+
+	public void setTankFarbe(String tankFarbe) {
+		this.tankFarbe = tankFarbe;
 	}
 
 }

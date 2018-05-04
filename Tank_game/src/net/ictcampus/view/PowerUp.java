@@ -19,7 +19,7 @@ public class PowerUp extends Element{
 		super(posX, posY, width, height, pic);
 	}
 	
-	//Die Position wird zufällig bestummen
+	//Die Position wird zufällig bestimmt
 	public void zufallPosition() {
 		PowerUp = zufallPowerUp();
 		ugZufallPos = Math.random()*4;
