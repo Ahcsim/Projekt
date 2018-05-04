@@ -26,10 +26,11 @@ public class Tank extends Element {
 	private String tankFarbe;
 	private String name;
 	private ReloadTimeer Timer;
-
-	public Tank(String name, int x, int y, int width, int height, String pic) {
+	private String f;
+	public Tank(String name, int x, int y, int width, int height, String pic,String farbe) {
 		super(x, y, width, height, pic);
 		this.name = name;
+		this.f=farbe;
 		try {
 			// newTank = ImageIO.read(new File(pic));
 			setImg(ImageIO.read(new File(pic)));
@@ -89,7 +90,7 @@ public class Tank extends Element {
 		case 1:
 			try {
 				// newTank = ImageIO.read(new File("Images/rothoch.png"));
-				setImg(ImageIO.read(new File("Images/rothoch.png")));
+				setImg(ImageIO.read(new File("Images/"+f+"hoch.png")));
 				setRichtung("hoch");
 				// ;
 			} catch (IOException e) {
@@ -100,7 +101,7 @@ public class Tank extends Element {
 		case 2:
 			try {
 				// newTank = ImageIO.read(new File("Images/rotrechts.png"));
-				setImg(ImageIO.read(new File("Images/rotrechts.png")));
+				setImg(ImageIO.read(new File("Images/"+f+"rechts.png")));
 				setRichtung("rechts");
 			} catch (IOException e) {
 				e.printStackTrace();
@@ -110,7 +111,7 @@ public class Tank extends Element {
 		case 3:
 			try {
 				// newTank = ImageIO.read(new File("Images/rotrunter.png"));
-				setImg(ImageIO.read(new File("Images/rotrunter.png")));
+				setImg(ImageIO.read(new File("Images/"+f+"runter.png")));
 				setRichtung("runter");
 			} catch (IOException e) {
 				e.printStackTrace();
@@ -120,7 +121,7 @@ public class Tank extends Element {
 		case 4:
 			try {
 				// newTank = ImageIO.read(new File("Images/rotlinks.png"));
-				setImg(ImageIO.read(new File("Images/rotlinks.png")));
+				setImg(ImageIO.read(new File("Images/"+f+"links.png")));
 				setRichtung("links");
 			} catch (IOException e) {
 				e.printStackTrace();
@@ -130,7 +131,7 @@ public class Tank extends Element {
 		case 5:
 			try {
 				// newTank = ImageIO.read(new File("Images/gelbhoch.png"));
-				setImg(ImageIO.read(new File("Images/gelbhoch.png")));
+				setImg(ImageIO.read(new File("Images/"+f+"hoch.png")));
 				setRichtung("hoch");
 				// ;
 			} catch (IOException e) {
@@ -141,7 +142,7 @@ public class Tank extends Element {
 		case 6:
 			try {
 				// newTank = ImageIO.read(new File("Images/gelbrechts.png"));
-				setImg(ImageIO.read(new File("Images/gelbrechts.png")));
+				setImg(ImageIO.read(new File("Images/"+f+"rechts.png")));
 				setRichtung("rechts");
 			} catch (IOException e) {
 				e.printStackTrace();
@@ -151,7 +152,7 @@ public class Tank extends Element {
 		case 7:
 			try {
 				// newTank = ImageIO.read(new File("Images/gelbrunter.png"));
-				setImg(ImageIO.read(new File("Images/gelbrunter.png")));
+				setImg(ImageIO.read(new File("Images/"+f+"runter.png")));
 				setRichtung("runter");
 			} catch (IOException e) {
 				e.printStackTrace();
@@ -161,7 +162,7 @@ public class Tank extends Element {
 		case 8:
 			try {
 				// newTank = ImageIO.read(new File("Images/gelblinks.png"));
-				setImg(ImageIO.read(new File("Images/gelblinks.png")));
+				setImg(ImageIO.read(new File("Images/"+f+"links.png")));
 				setRichtung("links");
 			} catch (IOException e) {
 				e.printStackTrace();

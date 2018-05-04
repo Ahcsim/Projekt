@@ -12,18 +12,21 @@ import net.ictcampus.control.ReloadTimeer;
 import net.ictcampus.model.Element;
 
 public class GameField extends JFrame{
-
+	private String farbe1;
+	private String farbe2;
 	ArrayList<Element> elements = new ArrayList<>();
 	Frame panel;
 
 	public GameField(String farbeTank1, String farbeTank2) {
+		farbe1 = farbeTank1;
+		farbe2 = farbeTank2;
 		setSize(700, 700);
-		//setResizable(false);
+		setResizable(false);
 
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		Tank tank1 = new Tank("Tank1", 20, 50, 32, 60, "Images/gelbrunter.png");
+		Tank tank1 = new Tank("Tank1", 20, 50, 32, 60, "Images/"+farbe1+"runter.png",farbe1);
 		tank1.setRichtung("runter");
-		Tank tank2 = new Tank("Tank2", 630, 630, 32, 60, "Images/rothoch.png");
+		Tank tank2 = new Tank("Tank2", 630, 630, 32, 60, "Images/"+farbe2+"hoch.png",farbe2);
 		PowerUp pu = new PowerUp(0, 0, 30,30,"Images/powerup.png");
 		tank2.setRichtung("hoch");
 		Barrier barrier1 = new Barrier(122, 90, 139, 42, "Images/barrier.png");
@@ -57,10 +60,5 @@ public class GameField extends JFrame{
 	public void addElement(Element a) {
 		elements.add(a);
 	}
-
-//	public static void main(String[] args){
-//		GameField field = new GameField();
-//
-//	}
 
 }
