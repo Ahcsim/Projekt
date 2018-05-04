@@ -31,6 +31,7 @@ public class Tank extends Element {
 		super(x, y, width, height, pic);
 		this.name = name;
 		this.f=farbe;
+		System.out.println(pic);
 		try {
 			// newTank = ImageIO.read(new File(pic));
 			setImg(ImageIO.read(new File(pic)));

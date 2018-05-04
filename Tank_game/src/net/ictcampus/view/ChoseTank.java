@@ -16,9 +16,11 @@ import com.sun.corba.se.impl.ior.NewObjectKeyTemplateBase;
 import net.ictcampus.control.ButtonListener;
 
 public class ChoseTank extends JFrame {
+	ButtonListener bl;
 
-	public ChoseTank() {
+	public ChoseTank(ButtonListener bl) {
 		super("TankGame");
+		this.bl = bl;
 
 	}
 
@@ -67,10 +69,10 @@ public class ChoseTank extends JFrame {
 		auswahl4Button.setLocation(933, 0);
 		auswahl4Button.setFocusable(false);
 
-		auswahl1Button.addActionListener(new ButtonListener(this));
-		auswahl2Button.addActionListener(new ButtonListener(this));
-		auswahl3Button.addActionListener(new ButtonListener(this));
-		auswahl4Button.addActionListener(new ButtonListener(this));
+		auswahl1Button.addActionListener(bl);
+		auswahl2Button.addActionListener(bl);
+		auswahl3Button.addActionListener(bl);
+		auswahl4Button.addActionListener(bl);
 
 		add(auswahl1Button);
 		add(auswahl2Button);
@@ -81,7 +83,6 @@ public class ChoseTank extends JFrame {
 	}
 	
 	public void chooseSecond() {
-
 		setSize(1245, 700);
 		setResizable(false);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -125,10 +126,10 @@ public class ChoseTank extends JFrame {
 		auswahl4Button.setLocation(933, 0);
 		auswahl4Button.setFocusable(false);
 
-		auswahl1Button.addActionListener(new ButtonListener(this));
-		auswahl2Button.addActionListener(new ButtonListener(this));
-		auswahl3Button.addActionListener(new ButtonListener(this));
-		auswahl4Button.addActionListener(new ButtonListener(this));
+		auswahl1Button.addActionListener(bl);
+		auswahl2Button.addActionListener(bl);
+		auswahl3Button.addActionListener(bl);
+		auswahl4Button.addActionListener(bl);
 
 		add(auswahl1Button);
 		add(auswahl2Button);
@@ -137,4 +138,6 @@ public class ChoseTank extends JFrame {
 		add(background);
 		setVisible(true);
 	}
+
+
 }

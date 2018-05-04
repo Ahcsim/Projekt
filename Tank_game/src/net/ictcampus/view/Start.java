@@ -37,8 +37,8 @@ public class Start extends JFrame{
 		startButton.setForeground(Color.WHITE);
 		startButton.setFont(new Font("Serif", Font.BOLD, 50));
 		startButton.setFocusable(false);
-		
-		startButton.addActionListener(new ButtonListener(this));
+		ButtonListener bl = new ButtonListener(this);
+		startButton.addActionListener(bl);
 		
 		add(startButton);
 		add(background);

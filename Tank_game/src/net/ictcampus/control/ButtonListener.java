@@ -12,8 +12,8 @@ public class ButtonListener implements ActionListener{
 	private String tankFarbep2;
 	Start start;
 	ChoseTank choseT;
-	Game g = new Game();
-	ChoseTank ct = new ChoseTank();
+	ChoseTank ct; 
+	ChoseTank ct2; 
 	public ButtonListener(Start s) {
 		start = s;
 	}
@@ -24,59 +24,76 @@ public class ButtonListener implements ActionListener{
 	public void actionPerformed(ActionEvent e) {
 		if(e.getActionCommand().equals("Start")) {
 			start.dispose();
+			ct = new ChoseTank(this);
 			ct.choose();
 			
 			
 		}
 		if(e.getActionCommand().equals("t1")) {
-
-			tankFarbe = "gray";
-			choseT.dispose();
-			ct.chooseSecond();
+			
+			tankFarbe = "grau";
+			//g.setF1(tankFarbe);
+			ct.dispose();
+			ct2 = new ChoseTank(this);
+			ct2.chooseSecond();
 		}
 		if(e.getActionCommand().equals("t2")) {
 
-			tankFarbe = "green";
-			choseT.dispose();
-			ct.chooseSecond();
+			tankFarbe = "grün";
+			//g.setF1(tankFarbe);
+			ct.dispose();
+			ct2 = new ChoseTank(this);
+			ct2.chooseSecond();
 		}
 		if(e.getActionCommand().equals("t3")) {
 
-			tankFarbe = "yellow";
-			choseT.dispose();
-			ct.chooseSecond();
+			tankFarbe = "gelb";
+			//g.setF1(tankFarbe);
+			ct.dispose();
+			ct2 = new ChoseTank(this);
+			ct2.chooseSecond();
 		}
 		if(e.getActionCommand().equals("t4")) {
 
-			tankFarbe = "red";
-			choseT.dispose();
-			ct.chooseSecond();
+			tankFarbe = "rot";
+			//g.setF1(tankFarbe);
+			ct.dispose();
+			ct2 = new ChoseTank(this);
+			ct2.chooseSecond();
 		}
 		if(e.getActionCommand().equals("t1p2")) {
 
-			tankFarbep2 = "grayp2";
+			tankFarbep2 = "grau";
 			GameField gf = new GameField(tankFarbe, tankFarbep2);
-			choseT.dispose();
+			ct2.dispose();
 		}
 		if(e.getActionCommand().equals("t2p2")) {
 
-			tankFarbep2 = "greenp2";
+			tankFarbep2 = "grün";
 			GameField gf = new GameField(tankFarbe, tankFarbep2);
-			choseT.dispose();
+			ct2.dispose();
 		}
 		if(e.getActionCommand().equals("t3p2")) {
 
-			tankFarbep2 = "yellowp2";
+			tankFarbep2 = "gelb";
 			GameField gf = new GameField(tankFarbe, tankFarbep2);
-			choseT.dispose();
+			ct2.dispose();
 		}
 		if(e.getActionCommand().equals("t4p2")) {
 
-			tankFarbep2 = "redp2";
+			tankFarbep2 = "rot";
 			GameField gf = new GameField(tankFarbe, tankFarbep2);
-			choseT.dispose();
+			ct2.dispose();
 		}
 		
+	}
+
+	public ChoseTank getChoseT() {
+		return choseT;
+	}
+
+	public void setChoseT(ChoseTank choseT) {
+		this.choseT = choseT;
 	}
 
 }
