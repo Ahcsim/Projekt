@@ -37,9 +37,7 @@ public class Frame extends JPanel {
 					Element el =iteratorBullets.next();
 					if(el instanceof Bullet) {
 						Bullet bullet = (Bullet) el;
-						System.out.println("why keine move");
 						bullet.moveObject(bullet.getRichtung());
-						System.out.println("why keine move!!!!!");
 						if(bullet.getX()<0||bullet.getX()>700) {
 							iteratorBullets.remove();
 						}
@@ -48,20 +46,26 @@ public class Frame extends JPanel {
 						}
 						if(bullet.collision(t1)) {
 							t1.setLives(t1.getLives()-1);
+							System.out.println(t1.getLives()+"Spieler 1");
 							System.out.println("GETROFFEN!");
 							iteratorBullets.remove();
 						}
 						if(bullet.collision(t2)) {
-							t2.setLives(t1.getLives()-1);
+							t2.setLives(t2.getLives()-1);
+							System.out.println(t2.getLives()+"Spieler 2");
 							System.out.println("GETROFFEN!");
 							iteratorBullets.remove();
 						}
 					}
 					t1.moveObject(t1.getRichtung());
-					t1.tankStop();
 					t2.moveObject(t2.getRichtung());
-					t2.tankStop();
 					repaint();
+					//t1.tankStop();
+					//t2.tankStop();
+					Thread panzer = new Thread();
+					Thread panzer2= new Thread();
+					
+					
 				}
 			}
 		});

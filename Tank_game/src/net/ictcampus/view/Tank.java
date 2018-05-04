@@ -18,7 +18,7 @@ public class Tank extends Element {
 
 	// BufferedImage newTank;
 	private String richtung;
-	private int speed = 5;
+	private int speed = 1;
 	private int lives = 3;
 	private int reloadTime;
 	private int distance;
@@ -74,7 +74,7 @@ public class Tank extends Element {
 	
 
 	public Bullet shoot(Tank t) {
-		Bullet schuss = new Bullet(t.getX(), t.getY()-20, 28, 17, "Images/bullet.png");
+		Bullet schuss = new Bullet(t.getX(), t.getY(), 8, 8, "Images/punkt.png");
 		return schuss;
 	}
 

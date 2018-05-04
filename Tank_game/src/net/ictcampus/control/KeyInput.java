@@ -107,8 +107,22 @@ public class KeyInput implements KeyListener {
 			Bullet a = (tank2.shoot(tank2));
 			feld.addElement(a);
 			a.setRichtung(tank2.getRichtung());
+			switch(a.getRichtung()) {
+			case "hoch":
+				a.bulletForward();
+				break;
+			case "runter":
+				a.bulletBackward();
+				break;
+			case "links":
+				a.bulletLeft();
+				break;
+			case "rechts":
+				a.bulletRight();
+				break;
+			}
 			try {
-				a.setImg(ImageIO.read(new File("Images/bullet.png")));
+				a.setImg(ImageIO.read(new File("Images/punkt.png")));
 			} catch (IOException e1) {
 				// TODO Auto-generated catch block
 				e1.printStackTrace();
@@ -120,8 +134,22 @@ public class KeyInput implements KeyListener {
 			Bullet a = (tank1.shoot(tank1));
 			a.setRichtung(tank1.getRichtung());
 			feld.addElement(a);
+			switch(a.getRichtung()) {
+			case "hoch":
+				a.bulletForward();
+				break;
+			case "runter":
+				a.bulletBackward();
+				break;
+			case "links":
+				a.bulletLeft();
+				break;
+			case "rechts":
+				a.bulletRight();
+				break;
+			}
 			try {
-				a.setImg(ImageIO.read(new File("Images/bullet.png")));
+				a.setImg(ImageIO.read(new File("Images/punkt.png")));
 			} catch (IOException e1) {
 				// TODO Auto-generated catch block
 				e1.printStackTrace();

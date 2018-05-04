@@ -85,5 +85,6 @@ public class PowerUp extends Element{
 	public int getPowerUp() {
 		return PowerUp;
 	}
+	program.work = true;
 	
 }

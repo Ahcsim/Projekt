@@ -7,7 +7,7 @@ import javax.swing.JFrame;
 import net.ictcampus.model.Element;
 
 public class Bullet extends Element {
-	private int shotSpeed = 5;
+	private int shotSpeed = 15;
 	private int distance;
 	private String richtung="rechts";
 
@@ -17,18 +17,26 @@ public class Bullet extends Element {
 
 	public void bulletForward() {
 		setDistance(-getShotSpeed());
+		setY(getY()-5);
+		setX(getX()+12);
 	}
 
 	public void bulletRight() {
 		setDistance(getShotSpeed());
+		setX(getX()+50);
+		setY(getY()+12);
 	}
 
 	public void bulletBackward() {
 		setDistance(getShotSpeed());
+		setY(getY()+45);
+		setX(getX()+10);
 	}
 
 	public void bulletLeft() {
 		setDistance(-getShotSpeed());
+		setX(getX()-5);
+		setY(getY()+11);
 	}
 
 	public void bulletStop() {
