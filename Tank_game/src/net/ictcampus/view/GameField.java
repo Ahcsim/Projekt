@@ -18,7 +18,7 @@ public class GameField extends JFrame{
 
 	public GameField(String farbeTank1, String farbeTank2) {
 		setSize(700, 700);
-		//setResizable(false);
+		setResizable(false);
 
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		Tank tank1 = new Tank("Tank1", 20, 50, 32, 60, "Images/gelbrunter.png");
@@ -57,10 +57,5 @@ public class GameField extends JFrame{
 	public void addElement(Element a) {
 		elements.add(a);
 	}
-
-//	public static void main(String[] args){
-//		GameField field = new GameField();
-//
-//	}
 
 }
