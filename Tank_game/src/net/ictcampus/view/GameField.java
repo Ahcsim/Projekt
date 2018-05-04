@@ -8,6 +8,7 @@ import java.util.List;
 import javax.swing.JFrame;
 
 import net.ictcampus.control.KeyInput;
+import net.ictcampus.control.ReloadTimeer;
 import net.ictcampus.model.Element;
 
 public class GameField extends JFrame{
@@ -17,12 +18,12 @@ public class GameField extends JFrame{
 
 	public GameField() {
 		setSize(700, 700);
-		setResizable(false);
+		//setResizable(false);
 
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		Tank tank1 = new Tank(20, 50, 32, 60, "Images/gelbrunter.png");
+		Tank tank1 = new Tank("Tank1", 20, 50, 32, 60, "Images/gelbrunter.png");
 		tank1.setRichtung("runter");
-		Tank tank2 = new Tank(630, 630, 32, 60, "Images/rothoch.png");
+		Tank tank2 = new Tank("Tank2", 630, 630, 32, 60, "Images/rothoch.png");
 		PowerUp pu = new PowerUp(0, 0, 30,30,"Images/powerup.png");
 		tank2.setRichtung("hoch");
 		Barrier barrier1 = new Barrier(122, 90, 139, 42, "Images/barrier.png");
@@ -31,7 +32,7 @@ public class GameField extends JFrame{
 		Barrier barrier4 = new Barrier(38, 403, 113, 42, "Images/barrier.png");
 		Barrier barrier5 = new Barrier(117, 497, 37, 100, "Images/barrierhoch.png");
 		Barrier barrier6 = new Barrier(384, 461, 146, 41, "Images/barrier.png");
-		Barrier barrier7 = new Barrier(592, 565, 36, 74, "mages/barrierhoch.png");
+		Barrier barrier7 = new Barrier(592, 565, 36, 74, "Images/barrierhoch.png");
 		elements.add(barrier1);
 		elements.add(barrier2);
 		elements.add(barrier3);
@@ -44,7 +45,6 @@ public class GameField extends JFrame{
 		elements.add(pu);
 		panel = new Frame(elements, tank1,tank2);
 		add(panel);
-
 		KeyInput ki = new KeyInput(tank1,tank2, this,this);
 
 		addKeyListener(ki);

@@ -19,6 +19,8 @@ public class KeyInput implements KeyListener {
 	Tank tank2;
 	JFrame frame;
 	GameField feld;
+	ReloadTimeer timer = new ReloadTimeer();
+	ReloadTimeer timer2 = new ReloadTimeer();
 
 	public KeyInput(Tank t1, Tank t2, JFrame f, GameField field) {
 		// TODO Auto-generated constructor stub
@@ -34,129 +36,144 @@ public class KeyInput implements KeyListener {
 			tank2.setHeight(60);
 			tank2.setWidth(32);
 			tank2.tankForward();
-			//int y = tank2.getY();
-			//tank2.setY(y - 8);
-			//frame.repaint();
+			// int y = tank2.getY();
+			// tank2.setY(y - 8);
+			// frame.repaint();
 		}
 		if (e.getKeyCode() == KeyEvent.VK_DOWN) {
 			tank2.changeImg(3);
-			//int y = tank2.getY();
+			// int y = tank2.getY();
 			tank2.setHeight(60);
 			tank2.setWidth(32);
 			tank2.tankBackward();
-			//tank2.setY(y + 8);
-			//frame.repaint();
+			// tank2.setY(y + 8);
+			// frame.repaint();
 		}
 		if (e.getKeyCode() == KeyEvent.VK_RIGHT) {
 			tank2.changeImg(2);
-			//int x = tank2.getX();
+			// int x = tank2.getX();
 			tank2.setHeight(32);
 			tank2.setWidth(60);
 			tank2.tankRight();
-			//tank2.setX(x + 8);
-			//frame.repaint();
+			// tank2.setX(x + 8);
+			// frame.repaint();
 		}
 		if (e.getKeyCode() == KeyEvent.VK_LEFT) {
 			tank2.changeImg(4);
-			//int x = tank2.getX();
+			// int x = tank2.getX();
 			tank2.setHeight(32);
 			tank2.setWidth(60);
 			tank2.tankLeft();
-			//tank2.setX(x - 8);
-			//frame.repaint();
+			// tank2.setX(x - 8);
+			// frame.repaint();
 		}
 		if (e.getKeyCode() == KeyEvent.VK_W) {
 			tank1.changeImg(5);
-			//int y = tank1.getY();
+			// int y = tank1.getY();
 			tank1.setHeight(60);
 			tank1.setWidth(32);
 			tank1.tankForward();
-			//tank1.setY(y - 8);
-			//frame.repaint();
+			// tank1.setY(y - 8);
+			// frame.repaint();
 		}
 		if (e.getKeyCode() == KeyEvent.VK_S) {
 			tank1.changeImg(7);
-			//int y = tank1.getY();
+			// int y = tank1.getY();
 			tank1.setHeight(60);
 			tank1.setWidth(32);
 			tank1.tankBackward();
-			//tank1.setY(y + 8);
-			//frame.repaint();
+			// tank1.setY(y + 8);
+			// frame.repaint();
 		}
 		if (e.getKeyCode() == KeyEvent.VK_D) {
 			tank1.changeImg(6);
-			//int x = tank1.getX();
+			// int x = tank1.getX();
 			tank1.setHeight(32);
 			tank1.setWidth(60);
 			tank1.tankRight();
-			//tank1.setX(x + 8);
-			//frame.repaint();
+			// tank1.setX(x + 8);
+			// frame.repaint();
 		}
 		if (e.getKeyCode() == KeyEvent.VK_A) {
 			tank1.changeImg(8);
-			//int x = tank1.getX();
+			// int x = tank1.getX();
 			tank1.setHeight(32);
 			tank1.setWidth(60);
 			tank1.tankLeft();
-			//tank1.setX(x - 8);
-			//frame.repaint();
+			// tank1.setX(x - 8);
+			// frame.repaint();
 
+		}
+		if (e.getKeyCode() == 96) {
+			tank2.tankStop();
+		}
+		if (e.getKeyCode() == KeyEvent.VK_F) {
+			tank1.tankStop();
 		}
 
 		if (e.getKeyCode() == KeyEvent.VK_CONTROL) {
-			Bullet a = (tank2.shoot(tank2));
-			feld.addElement(a);
-			a.setRichtung(tank2.getRichtung());
-			switch(a.getRichtung()) {
-			case "hoch":
-				a.bulletForward();
-				break;
-			case "runter":
-				a.bulletBackward();
-				break;
-			case "links":
-				a.bulletLeft();
-				break;
-			case "rechts":
-				a.bulletRight();
-				break;
-			}
-			try {
-				a.setImg(ImageIO.read(new File("Images/punkt.png")));
-			} catch (IOException e1) {
-				// TODO Auto-generated catch block
-				e1.printStackTrace();
-			}
-			//frame.repaint();
-			//a.fliegen(tank2.getRichtung(), tank2, a,frame);
-			}
-		if (e.getKeyCode() == KeyEvent.VK_CAPS_LOCK) {
-			Bullet a = (tank1.shoot(tank1));
-			a.setRichtung(tank1.getRichtung());
-			feld.addElement(a);
-			switch(a.getRichtung()) {
-			case "hoch":
-				a.bulletForward();
-				break;
-			case "runter":
-				a.bulletBackward();
-				break;
-			case "links":
-				a.bulletLeft();
-				break;
-			case "rechts":
-				a.bulletRight();
-				break;
-			}
-			try {
-				a.setImg(ImageIO.read(new File("Images/punkt.png")));
-			} catch (IOException e1) {
-				// TODO Auto-generated catch block
-				e1.printStackTrace();
-			}
-			//frame.repaint();
-			//a.fliegen(tank1.getRichtung(), tank1, a,frame);
+			int zeit = timer.getTime();
+			if (zeit > 1) {
+				timer.setTime(0);
+				Bullet a = (tank2.shoot(tank2));
+				feld.addElement(a);
+				a.setRichtung(tank2.getRichtung());
+				switch (a.getRichtung()) {
+				case "hoch":
+					a.bulletForward();
+					break;
+				case "runter":
+					a.bulletBackward();
+					break;
+				case "links":
+					a.bulletLeft();
+					break;
+				case "rechts":
+					a.bulletRight();
+					break;
+				}
+				try {
+					a.setImg(ImageIO.read(new File("Images/punkt.png")));
+				} catch (IOException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+				// frame.repaint();
+				// a.fliegen(tank2.getRichtung(), tank2, a,frame);
 
+			}
+		}
+		if (e.getKeyCode() == KeyEvent.VK_CAPS_LOCK) {
+			int zeit2 = timer.getTime();
+			if (zeit2 > 1) {
+				timer2.setTime(0);
+				Bullet a = (tank1.shoot(tank1));
+				a.setRichtung(tank1.getRichtung());
+				feld.addElement(a);
+				switch (a.getRichtung()) {
+				case "hoch":
+					a.bulletForward();
+					break;
+				case "runter":
+					a.bulletBackward();
+					break;
+				case "links":
+					a.bulletLeft();
+					break;
+				case "rechts":
+					a.bulletRight();
+					break;
+				}
+				try {
+					a.setImg(ImageIO.read(new File("Images/punkt.png")));
+				} catch (IOException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+				// frame.repaint();
+				// a.fliegen(tank1.getRichtung(), tank1, a,frame);
+
+			}
 		}
 	}
 
