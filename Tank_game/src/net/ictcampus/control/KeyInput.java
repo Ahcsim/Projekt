@@ -144,7 +144,7 @@ public class KeyInput implements KeyListener {
 			}
 		}
 		if (e.getKeyCode() == KeyEvent.VK_CAPS_LOCK) {
-			int zeit2 = timer.getTime();
+			int zeit2 = timer2.getTime();
 			if (zeit2 > 1) {
 				timer2.setTime(0);
 				Bullet a = (tank1.shoot(tank1));
