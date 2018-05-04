@@ -11,6 +11,7 @@ import java.util.List;
 import java.awt.event.ActionEvent;
 import javax.imageio.ImageIO;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.Timer;
 
@@ -66,12 +67,18 @@ public class Frame extends JPanel {
 							System.out.println("GETROFFEN!");
 							System.out.println(" Spieler 1 hat " + t1.getLives() + " Leben übrig");
 							iteratorBullets.remove();
+							if(t1.getLives()<=0) {
+								end1();
+							}
 						}
 						if (bullet.collision(t2)&&bullet.getOwner()!="Tank2") {
 							t2.setLives(t2.getLives() - 1);
 							System.out.println("GETROFFEN!");
 							System.out.println("Spieler 2 hat " + t2.getLives() + " Leben übrig");
 							iteratorBullets.remove();
+							if(t2.getLives()<=0) {
+								end2();
+							}
 						}
 					}
 					Iterator<Element> iterator2Barrier = elements.iterator();
@@ -224,6 +231,14 @@ public class Frame extends JPanel {
 
 	public void resume() {
 		timer.start();
+	}
+	public void end1() {
+		JOptionPane.showMessageDialog(null, "Spieler 1 ist gestorben, glückwunsch Spieler 2","Ende",JOptionPane.OK_OPTION);
+		timer.stop();
+	}
+	public void end2() {
+		JOptionPane.showMessageDialog(null, "Spieler 2 ist gestorben, glückwunsch Spieler 1","Ende",JOptionPane.OK_OPTION);
+		timer.stop();
 	}
 
 	public void paintComponent(Graphics g) {
