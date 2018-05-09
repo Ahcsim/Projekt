@@ -29,18 +29,22 @@ public class PowerUp extends Element{
 		case 1:
 			setxPos(63);
 			setyPos(590);
+			zufallPowerUp();
 			break;
 		case 2:
 			setxPos(632);
 			setyPos(64);
+			zufallPowerUp();
 			break;
 		case 3:
 			setxPos(460);
 			setyPos(370);
+			zufallPowerUp();
 			break;
 		case 4:
 			setxPos(406);
 			setyPos(595);
+			zufallPowerUp();
 			break;
 		default:
 			zufallPosition();
@@ -63,6 +67,10 @@ public class PowerUp extends Element{
 			tank.setLives(lives);
 		}
 			
+	}
+	
+	public void speedPlus() {
+		
 	}
 	
 	//Getter und Setter

@@ -75,7 +75,6 @@ public class Tank extends Element {
 			break;
 		}
 	}
-	
 
 	//Wenn ein panzer schiesst, wird hier ein neuer Schuss erstellt
 	public Bullet shoot(Tank t) {

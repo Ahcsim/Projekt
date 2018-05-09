@@ -240,6 +240,7 @@ public class Frame extends JPanel {
 	public void resume() {
 		timer.start();
 	}
+
 	public void end1() {
 		JOptionPane.showMessageDialog(null, "Spieler 1 ist gestorben, glückwunsch Spieler 2","Ende",JOptionPane.OK_OPTION);
 		timer.stop();
