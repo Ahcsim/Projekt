@@ -77,7 +77,6 @@ public class Tank extends Element {
 			break;
 		}
 	}
-	
 
 	public Bullet shoot(Tank t) {
 			Bullet schuss = new Bullet(t.getName(),t.getX(), t.getY(), 8, 8, "Images/punkt.png");

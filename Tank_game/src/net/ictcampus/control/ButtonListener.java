@@ -29,12 +29,15 @@ public class ButtonListener implements ActionListener{
 			
 			
 		}
+		
+		//Schaut welcher Button geklickt wurde
 		if(e.getActionCommand().equals("t1")) {
 			
 			tankFarbe = "grau";
 			//g.setF1(tankFarbe);
 			ct.dispose();
 			ct2 = new ChoseTank(this);
+			//Der zweite Tank wird erstellt und kann ausgewählt werden
 			ct2.chooseSecond();
 		}
 		if(e.getActionCommand().equals("t2")) {
@@ -61,9 +64,11 @@ public class ButtonListener implements ActionListener{
 			ct2 = new ChoseTank(this);
 			ct2.chooseSecond();
 		}
+		//Hier wird der zweite Tank gewählt
 		if(e.getActionCommand().equals("t1p2")) {
 
 			tankFarbep2 = "grau";
+			//Der Panzer wird erstellt
 			GameField gf = new GameField(tankFarbe, tankFarbep2);
 			ct2.dispose();
 		}

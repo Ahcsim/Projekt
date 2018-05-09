@@ -25,13 +25,15 @@ public class ChoseTank extends JFrame {
 	}
 
 	public void choose() {
-
+		
+		//Frame wird erstellt
 		setSize(1245, 700);
 		setResizable(false);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setLocation(0, 0);
 		JLabel background = new JLabel(new ImageIcon("Images/Start.png"));
-
+		
+		//Button mit Bilder definieren
 		ImageIcon imageForOne = new ImageIcon("Images/auswahl1.png");
 		ImageIcon imageForTwo = new ImageIcon("Images/auswahl2.png");
 		ImageIcon imageForThree = new ImageIcon("Images/auswahl3.png");
@@ -41,6 +43,7 @@ public class ChoseTank extends JFrame {
 		JButton auswahl3Button = new JButton("t3", imageForThree);
 		JButton auswahl4Button = new JButton("t4", imageForFour);
 
+		//Hier werden die Buttons definiert und transparent gemacht
 		auswahl1Button.setSize(311, 700);
 		auswahl1Button.setOpaque(false);
 		auswahl1Button.setContentAreaFilled(false);
@@ -81,7 +84,7 @@ public class ChoseTank extends JFrame {
 		add(background);
 		setVisible(true);
 	}
-	
+	//Das gleiche wie oben nur ein zweites mal
 	public void chooseSecond() {
 		setSize(1245, 700);
 		setResizable(false);
