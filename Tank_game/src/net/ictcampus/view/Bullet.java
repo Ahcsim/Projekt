@@ -5,7 +5,7 @@ import java.awt.Point;
 import javax.swing.JFrame;
 
 import net.ictcampus.model.Element;
-
+//Klasse für einen Schuss
 public class Bullet extends Element {
 	private int shotSpeed = 50;
 	private int distance;
@@ -17,6 +17,7 @@ public class Bullet extends Element {
 		this.owner=owner;
 	}
 
+	//Diese 5 Methoden setzten die richtung entweder + oder - und positionieren den schuss gerade vor dem Panzer
 	public void bulletForward() {
 		setDistance(-getShotSpeed());
 		setY(getY()-5);
@@ -45,6 +46,7 @@ public class Bullet extends Element {
 		setDistance(0);
 	}
 
+	//Hier wird der Schuss bewegt
 	public void moveObject(String dir) {
 		int x = getX();
 		int y = getY();

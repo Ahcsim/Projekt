@@ -16,10 +16,8 @@ public class Barrier extends Element{
 	public Barrier(int x, int y, int width, int height, String pic){
 		super(x, y, width, height, pic);
 		try {
-			BufferedImage newBarrier= ImageIO.read(new File(pic));
-			setImg(ImageIO.read(new File(pic)));
+			setImg(ImageIO.read(getClass().getResource(pic)));
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		

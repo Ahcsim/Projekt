@@ -14,13 +14,13 @@ import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.Timer;
-
-import net.ictcampus.control.ThreadPanzer1;
 import net.ictcampus.model.Element;
-
+/**
+In dieser Klasse wird ein Timer erstellt und bei einer Action die Kollisionen gecheckt und die Schüsse/Panzer bewegt
+**/
 public class Frame extends JPanel {
 
-	ArrayList<Element> elements = new ArrayList<>();
+	private ArrayList<Element> elements = new ArrayList<>();
 	private Timer timer;
 	private Tank t1;
 	private Tank t2;
@@ -34,15 +34,18 @@ public class Frame extends JPanel {
 	}
 
 	private void update() {
+		//
 		timer = new Timer(10, new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				boolean removed = false;
+				//Eine for schleife die durch die Elemente geht
 				for (Iterator<Element> iteratorBullets = elements.iterator(); iteratorBullets.hasNext();) {
 					Element el = iteratorBullets.next();
 					if (el instanceof Bullet) {
 						Bullet bullet = (Bullet) el;
 						bullet.moveObject(bullet.getRichtung());
+						//Falls der Schuss aus dem Spielfeld geht, wird er entfernt
 						if (bullet.getX() < 0 || bullet.getX() > 700) {
 							iteratorBullets.remove();
 							System.out.println("You missed everything");
@@ -55,6 +58,7 @@ public class Frame extends JPanel {
 						while (iteratorBarrier.hasNext() && !removed) {
 							Element a = iteratorBarrier.next();
 							if (a instanceof Barrier) {
+								//Wenn der schuss eine Barriere berührt, wird er entfernt
 								if (bullet.collision(a)) {
 									iteratorBullets.remove();
 									System.out.println("Barrierhit");
@@ -62,6 +66,7 @@ public class Frame extends JPanel {
 								}
 							}
 						}
+						//Wenn ein Spieler vom schuss des anderen getroffen wird, wird im ein Leben abgezogen und der Schuss wird entfernt
 						if (bullet.collision(t1)&&bullet.getOwner()!="Tank1") {
 							t1.setLives(t1.getLives() - 1);
 							System.out.println("GETROFFEN!");
@@ -84,6 +89,7 @@ public class Frame extends JPanel {
 					Iterator<Element> iterator2Barrier = elements.iterator();
 					while (iterator2Barrier.hasNext()) {
 						Element b = iterator2Barrier.next();
+						//Wenn ein ein Panzer eine Barriere berührt wird er umgedreht
 						if (b instanceof Barrier) {
 							if (t1.collision(b)) {
 								String richtung = t1.getRichtung();
@@ -145,6 +151,7 @@ public class Frame extends JPanel {
 							}
 						}
 					}
+					//Falls ein Panzer aus dem Spielfeld fährt wird er umgedreht
 					if (t1.getX() < -15 || t1.getX() > 715 -t1.getWidth()|| t1.getY() < -15 || t1.getY() > 710-t1.getHeight()) {
 						String richtung = t1.getRichtung();
 						switch (richtung) {
@@ -203,6 +210,7 @@ public class Frame extends JPanel {
 							break;
 						}
 					}
+					//und zum Schluss werden die Panzer bewegt
 					t1.moveObject(t1.getRichtung());
 					try {
 						Thread.sleep(1);
@@ -240,7 +248,7 @@ public class Frame extends JPanel {
 		JOptionPane.showMessageDialog(null, "Spieler 2 ist gestorben, glückwunsch Spieler 1","Ende",JOptionPane.OK_OPTION);
 		timer.stop();
 	}
-
+	//Hier werden die Objekte und der Hintergrund auf das Spielfeld gezeichnet
 	public void paintComponent(Graphics g) {
 		super.paintComponent(g);
 		g.drawLine(0, 0, 200, 300);

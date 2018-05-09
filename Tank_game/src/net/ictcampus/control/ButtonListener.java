@@ -10,10 +10,10 @@ import net.ictcampus.view.Start;
 public class ButtonListener implements ActionListener{
 	private String tankFarbe;
 	private String tankFarbep2;
-	Start start;
-	ChoseTank choseT;
-	ChoseTank ct; 
-	ChoseTank ct2; 
+	private Start start;
+	private ChoseTank choseT;
+	private ChoseTank ct; 
+	private ChoseTank ct2; 
 	public ButtonListener(Start s) {
 		start = s;
 	}

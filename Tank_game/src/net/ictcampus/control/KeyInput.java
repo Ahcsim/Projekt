@@ -13,6 +13,7 @@ import net.ictcampus.view.Bullet;
 import net.ictcampus.view.GameField;
 import net.ictcampus.view.Tank;
 
+//Keylistener welcher die eingaben aufnimmt, damit die Panzer fahren, schiessen und anhalten können
 public class KeyInput implements KeyListener {
 
 	Tank tank1;
@@ -22,96 +23,83 @@ public class KeyInput implements KeyListener {
 	ReloadTimeer timer = new ReloadTimeer();
 	ReloadTimeer timer2 = new ReloadTimeer();
 
-	public KeyInput(Tank t1, Tank t2, JFrame f, GameField field) {
-		// TODO Auto-generated constructor stub
+	//Im Konstruktor werden 2 Panzer das gamefield und das Frame weitergegeben
+	public KeyInput(Tank t1, Tank t2, GameField field) {
 		tank1 = t1;
 		tank2 = t2;
-		frame = f;
+		frame = field;
 		feld = field;
 	}
 
+	//nach oben fahren 2ter Panzer
 	public void keyPressed(KeyEvent e) {
 		if (e.getKeyCode() == KeyEvent.VK_UP) {
 			tank2.changeImg(1);
 			tank2.setHeight(60);
 			tank2.setWidth(32);
 			tank2.tankForward();
-			// int y = tank2.getY();
-			// tank2.setY(y - 8);
-			// frame.repaint();
 		}
+	//nach unten fahren 2ter Panzer
 		if (e.getKeyCode() == KeyEvent.VK_DOWN) {
 			tank2.changeImg(3);
-			// int y = tank2.getY();
 			tank2.setHeight(60);
 			tank2.setWidth(32);
 			tank2.tankBackward();
-			// tank2.setY(y + 8);
-			// frame.repaint();
 		}
+	//Nach rechts fahren 2ter Panzer
 		if (e.getKeyCode() == KeyEvent.VK_RIGHT) {
 			tank2.changeImg(2);
-			// int x = tank2.getX();
 			tank2.setHeight(32);
 			tank2.setWidth(60);
 			tank2.tankRight();
-			// tank2.setX(x + 8);
-			// frame.repaint();
 		}
+	//Nach links fahren 2ter Panzer
 		if (e.getKeyCode() == KeyEvent.VK_LEFT) {
 			tank2.changeImg(4);
-			// int x = tank2.getX();
 			tank2.setHeight(32);
 			tank2.setWidth(60);
 			tank2.tankLeft();
-			// tank2.setX(x - 8);
-			// frame.repaint();
 		}
+	//Nach oben fahren 1ter Panzer
 		if (e.getKeyCode() == KeyEvent.VK_W) {
 			tank1.changeImg(5);
-			// int y = tank1.getY();
 			tank1.setHeight(60);
 			tank1.setWidth(32);
 			tank1.tankForward();
-			// tank1.setY(y - 8);
-			// frame.repaint();
 		}
+	//Nach unten fahren 1ter Panzer
 		if (e.getKeyCode() == KeyEvent.VK_S) {
 			tank1.changeImg(7);
-			// int y = tank1.getY();
 			tank1.setHeight(60);
 			tank1.setWidth(32);
 			tank1.tankBackward();
-			// tank1.setY(y + 8);
-			// frame.repaint();
 		}
+	//Nach rechts fahren 1ter Panzer
 		if (e.getKeyCode() == KeyEvent.VK_D) {
 			tank1.changeImg(6);
-			// int x = tank1.getX();
 			tank1.setHeight(32);
 			tank1.setWidth(60);
 			tank1.tankRight();
-			// tank1.setX(x + 8);
-			// frame.repaint();
 		}
+	//Nach links fahren 1ter Panzer
 		if (e.getKeyCode() == KeyEvent.VK_A) {
 			tank1.changeImg(8);
-			// int x = tank1.getX();
 			tank1.setHeight(32);
 			tank1.setWidth(60);
 			tank1.tankLeft();
-			// tank1.setX(x - 8);
-			// frame.repaint();
 
+	//Tank stoppen 2ter Panzer
 		}
 		if (e.getKeyCode() == 96) {
 			tank2.tankStop();
 		}
+	//Tank stoppen 1ter Panzer	
 		if (e.getKeyCode() == KeyEvent.VK_F) {
 			tank1.tankStop();
 		}
-
+	//Tank 2 schiessen
 		if (e.getKeyCode() == KeyEvent.VK_CONTROL) {
+			//Timer der im sekundentakt hochzählt
 			int zeit = timer.getTime();
 			if (zeit > 1) {
 				timer.setTime(0);
@@ -135,14 +123,11 @@ public class KeyInput implements KeyListener {
 				try {
 					a.setImg(ImageIO.read(new File("Images/punkt.png")));
 				} catch (IOException e1) {
-					// TODO Auto-generated catch block
 					e1.printStackTrace();
 				}
-				// frame.repaint();
-				// a.fliegen(tank2.getRichtung(), tank2, a,frame);
-
 			}
 		}
+		//Tank 1 schiessen
 		if (e.getKeyCode() == KeyEvent.VK_CAPS_LOCK) {
 			int zeit2 = timer2.getTime();
 			if (zeit2 > 1) {
@@ -167,11 +152,8 @@ public class KeyInput implements KeyListener {
 				try {
 					a.setImg(ImageIO.read(new File("Images/punkt.png")));
 				} catch (IOException e1) {
-					// TODO Auto-generated catch block
 					e1.printStackTrace();
 				}
-				// frame.repaint();
-				// a.fliegen(tank1.getRichtung(), tank1, a,frame);
 
 			}
 		}

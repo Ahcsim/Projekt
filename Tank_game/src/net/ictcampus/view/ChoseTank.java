@@ -16,7 +16,7 @@ import com.sun.corba.se.impl.ior.NewObjectKeyTemplateBase;
 import net.ictcampus.control.ButtonListener;
 
 public class ChoseTank extends JFrame {
-	ButtonListener bl;
+	private ButtonListener bl;
 
 	public ChoseTank(ButtonListener bl) {
 		super("TankGame");

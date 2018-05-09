@@ -14,10 +14,8 @@ import com.sun.prism.Image;
 
 import net.ictcampus.control.ReloadTimeer;
 import net.ictcampus.model.Element;
-
+//Klasse für den Panzer
 public class Tank extends Element {
-
-	// BufferedImage newTank;
 	private String richtung;
 	private int speed = 1;
 	private int lives = 3;
@@ -33,15 +31,14 @@ public class Tank extends Element {
 		this.f=farbe;
 		System.out.println(pic);
 		try {
-			// newTank = ImageIO.read(new File(pic));
-			setImg(ImageIO.read(new File(pic)));
+			setImg(ImageIO.read(getClass().getResource(pic)));
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 
 	}
 
+	//Diese 5 Methoden setzten die richtung entweder + oder -
 	public void tankForward() {
 		setDistance(-speed);
 	}
@@ -59,6 +56,7 @@ public class Tank extends Element {
 	public void tankStop() {
 		setDistance(0);
 	}
+	//Mit dieser Methode wird der Tank bewegt
 	public void moveObject(String dir) {
 		int x=getX();
 		int y=getY();
@@ -79,6 +77,7 @@ public class Tank extends Element {
 	}
 	
 
+	//Wenn ein panzer schiesst, wird hier ein neuer Schuss erstellt
 	public Bullet shoot(Tank t) {
 			Bullet schuss = new Bullet(t.getName(),t.getX(), t.getY(), 8, 8, "Images/punkt.png");
 			return schuss;
@@ -86,14 +85,13 @@ public class Tank extends Element {
 		
 	}
 
+	//für jede der 4 Blickrichtungen gibt es ein Bild
 	public void changeImg(int t) {
 		switch (t) {
 		case 1:
 			try {
-				// newTank = ImageIO.read(new File("Images/rothoch.png"));
 				setImg(ImageIO.read(new File("Images/"+f+"hoch.png")));
 				setRichtung("hoch");
-				// ;
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
@@ -101,7 +99,6 @@ public class Tank extends Element {
 
 		case 2:
 			try {
-				// newTank = ImageIO.read(new File("Images/rotrechts.png"));
 				setImg(ImageIO.read(new File("Images/"+f+"rechts.png")));
 				setRichtung("rechts");
 			} catch (IOException e) {
@@ -111,7 +108,6 @@ public class Tank extends Element {
 
 		case 3:
 			try {
-				// newTank = ImageIO.read(new File("Images/rotrunter.png"));
 				setImg(ImageIO.read(new File("Images/"+f+"runter.png")));
 				setRichtung("runter");
 			} catch (IOException e) {
@@ -121,7 +117,6 @@ public class Tank extends Element {
 
 		case 4:
 			try {
-				// newTank = ImageIO.read(new File("Images/rotlinks.png"));
 				setImg(ImageIO.read(new File("Images/"+f+"links.png")));
 				setRichtung("links");
 			} catch (IOException e) {
@@ -131,7 +126,6 @@ public class Tank extends Element {
 
 		case 5:
 			try {
-				// newTank = ImageIO.read(new File("Images/gelbhoch.png"));
 				setImg(ImageIO.read(new File("Images/"+f+"hoch.png")));
 				setRichtung("hoch");
 				// ;
@@ -142,7 +136,6 @@ public class Tank extends Element {
 
 		case 6:
 			try {
-				// newTank = ImageIO.read(new File("Images/gelbrechts.png"));
 				setImg(ImageIO.read(new File("Images/"+f+"rechts.png")));
 				setRichtung("rechts");
 			} catch (IOException e) {
@@ -152,7 +145,6 @@ public class Tank extends Element {
 
 		case 7:
 			try {
-				// newTank = ImageIO.read(new File("Images/gelbrunter.png"));
 				setImg(ImageIO.read(new File("Images/"+f+"runter.png")));
 				setRichtung("runter");
 			} catch (IOException e) {
@@ -162,7 +154,6 @@ public class Tank extends Element {
 
 		case 8:
 			try {
-				// newTank = ImageIO.read(new File("Images/gelblinks.png"));
 				setImg(ImageIO.read(new File("Images/"+f+"links.png")));
 				setRichtung("links");
 			} catch (IOException e) {
